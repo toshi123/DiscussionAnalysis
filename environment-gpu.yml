@@ -1,0 +1,24 @@
+name: diarize-gpu
+channels:
+  - conda-forge
+  - pytorch
+  - nvidia
+dependencies:
+  - python=3.10
+  - pip
+  - ffmpeg
+  - soundfile
+  - numpy<2
+  - scipy
+  - pandas
+  - tqdm
+
+  # GPU pytorch stack
+  - pytorch
+  - torchaudio
+  - pytorch-cuda=12.1
+
+  - pip:
+      - "huggingface_hub==0.25.2"
+      - "pyannote.audio==3.4.0"
+      - "openai-whisper"
