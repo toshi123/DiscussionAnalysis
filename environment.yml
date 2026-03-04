@@ -1,27 +1,29 @@
 name: diarize
 channels:
   - conda-forge
+channel_priority: strict
 dependencies:
   - python=3.10
   - pip
 
-  # audio I/O / conversion
+  # audio conversion
   - ffmpeg
-  - soundfile
 
-  # numeric stack (avoid MKL by sticking to conda-forge)
+  # python soundfile module (import soundfile)
+  - pysoundfile
+
+  # numeric stack (avoid MKL via conda-forge)
   - numpy<2
   - scipy
 
-  # pytorch (CPU build from conda-forge)
+  # pytorch stack (CPU)
   - pytorch
   - torchaudio
 
-  # misc helpers (optional but useful)
+  # misc
   - pandas
   - tqdm
 
-  # keep HF + pyannote compatible
   - pip:
       - "huggingface_hub==0.25.2"
       - "pyannote.audio==3.4.0"
