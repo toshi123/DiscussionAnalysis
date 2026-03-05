@@ -1,0 +1,32 @@
+name: diarize
+channels:
+  - conda-forge
+channel_priority: strict
+dependencies:
+  - python=3.10
+  - pip
+
+  # audio I/O / conversion
+  - ffmpeg
+  - pysoundfile
+
+  # numeric stack (avoid NumPy 2 + MKL traps)
+  - numpy<2
+  - scipy
+
+  # IMPORTANT: prevent pip from trying to build these
+  - numba
+  - llvmlite
+
+  # pytorch stack (use conda packages to avoid libiomp conflicts)
+  - pytorch
+  - torchaudio
+
+  # misc
+  - pandas
+  - tqdm
+
+  - pip:
+      - "huggingface_hub==0.25.2"
+      - "pyannote.audio==3.4.0"
+      - "openai-whisper"
