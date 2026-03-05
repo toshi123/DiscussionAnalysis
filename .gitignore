@@ -1,3 +1,6 @@
 .specstory/**
-data/recordings/**
 .cursorindexingignore
+.DS_Store
+
+data/recordings/**
+data/outputs/**
